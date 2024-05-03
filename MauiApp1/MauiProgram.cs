@@ -16,10 +16,11 @@ namespace MauiApp1
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
     		builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
-#endif
+
+            builder.Services.AddTransient<DetailPage>();
+            builder.Services.AddTransient<DetailViewModel>();
 
             return builder.Build();
         }
